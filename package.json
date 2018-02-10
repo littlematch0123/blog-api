@@ -1,0 +1,12 @@
+{
+  "name": "blog-api",
+  "version": "1.0.0",
+  "description": "一套RESTful接口",
+  "main": "index.js",
+  "keywords": [],
+  "author": "xiaohuochai",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
