@@ -25,8 +25,17 @@
 
 &emsp;&emsp;7、七牛(apis/qiniu): 获取七牛uploadToken
 
+【项目亮点】
 
-【Rest设计】
+&emsp;&emsp;1、API遵循RESTful设计规范
+
+&emsp;&emsp;2、用户认证接口实现基于JWT技术
+
+&emsp;&emsp;3、使用七牛云作为图床CDN
+
+&emsp;&emsp;4、使用阿里云的短信服务实现验证码功能
+
+【RESTful规范设计】
 
 &emsp;&emsp;以文章操作为例
 
