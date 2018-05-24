@@ -1,12 +1,26 @@
 {
   "name": "blog-api",
   "version": "1.0.0",
-  "description": "一套RESTful接口",
+  "description": "一套博客管理系统的RESTful接口",
   "main": "index.js",
   "keywords": [],
   "author": "xiaohuochai",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.3",
+    "@alicloud/sms-sdk": "^1.0.8",
+    "babel-runtime": "^6.26.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "jsonwebtoken": "^8.1.1",
+    "mongodb": "^3.0.2",
+    "mongoose": "^5.0.4",
+    "qiniu": "^7.1.5"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0"
   }
 }
