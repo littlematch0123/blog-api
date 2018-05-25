@@ -1,7 +1,7 @@
 {
   "name": "blog-api",
   "version": "1.0.0",
-  "description": "一套博客管理系统的RESTful接口",
+  "description": "一套博客管理系统的API接口",
   "main": "index.js",
   "keywords": [],
   "author": "xiaohuochai",
