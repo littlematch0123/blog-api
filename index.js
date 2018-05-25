@@ -4,7 +4,9 @@ const mongoose = require('mongoose')
 // 对post请求的请求体及表单提交的信息进行解析
 const bodyParser = require('body-parser')
 app.use(bodyParser.json())
-
+app.get('/', (req, res) => {
+  res.send('博客系统API')
+})
 // 设置cors，处理跨域问题
 // const cors = require('cors')
 // app.use(cors())
