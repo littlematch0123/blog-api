@@ -8,8 +8,11 @@ app.get('/', (req, res) => {
   res.send('博客系统API')
 })
 // 设置cors，处理跨域问题
-// const cors = require('cors')
-// app.use(cors())
+const cors = require('cors')
+app.use(cors({
+  origin: 'https://xiaohuochai.cc',
+  optionsSuccessStatus: 200
+}))
 // 开启后端服务
 const { port } = require('./config')
 app.listen(port, () => {
