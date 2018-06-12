@@ -14,7 +14,7 @@ const adminAuth = (req, res, next) => {
       }
       if (decoded.admin === true) {
         if (decoded.test === true) {
-          return res.status(403).json({ code: 3, message: '测试帐号只允许查看，不允许修改' })
+          return res.status(403).json({ code: 4, message: '测试帐号只允许查看，不允许修改' })
         }
         next()
       } else {
