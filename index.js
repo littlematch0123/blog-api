@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 // 设置cors，处理跨域问题
 const cors = require('cors')
 app.use(cors({
-  origin: 'https://xiaohuochai.cc',
+  origin: 'https://www.xiaohuochai.cc',
   optionsSuccessStatus: 200
 }))
 // 开启后端服务
