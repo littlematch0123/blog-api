@@ -10,7 +10,8 @@ const UserSchema = new Schema(
     verificationCode: { type: String, match: /^\d{6}$/ },
     likes: [{ type: Schema.Types.ObjectId, ref: 'Like' }],
     comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
-    status: { type: Boolean, default: true }
+    status: { type: Boolean, default: true },
+    test: { type: Boolean, default: false }
   },
   { timestamps: true }
 )

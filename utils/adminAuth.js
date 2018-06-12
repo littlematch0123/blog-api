@@ -13,6 +13,9 @@ const adminAuth = (req, res, next) => {
         return res.status(401).json({ code: 3, message: '认证失败' })
       }
       if (decoded.admin === true) {
+        if (decoded.test === true) {
+          return res.status(403).json({ code: 3, message: '测试帐号只允许查看，不允许修改' })
+        }
         next()
       } else {
         return res.status(401).json({ code: 3, message: '认证失败' })
