@@ -38,7 +38,7 @@ const fnRelatedUser = (_id, res) => {
 module.exports = app => {
   /* 加载所有评论 */
   app.get('/comments', (req, res) => {
-    Comment.find().select('content createdAt viewed').populate('user', 'username').populate('post', 'title').exec((err, docs) => {
+    Comment.find().select('content createdAt viewed').populate('user', 'username').populate('post', 'title').sort('-createdAt').exec((err, docs) => {
       if (err) return res.status(500).json({ code: 0, message: err.message, err })
       return res.status(200).json({ code: 0, message: '获取评论成功', result: { docs } })
     })
