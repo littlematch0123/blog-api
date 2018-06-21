@@ -177,7 +177,7 @@ module.exports = app => {
       user.comparePassword(password, (err, isMatch) => {
         if (err) return res.status(500).json({ code: 2, message: err.message, err })
         if (!isMatch) return res.status(401).json({ code: 1, message: '密码无效' })
-        const { admin, test } = user
+        const { admin, test, _id } = user
         return res.status(201).json({ code: 0, message: '登录成功', result: { token: generateToken({ username, admin, test }), user: { username, _id } } })
       })
     })
