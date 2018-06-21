@@ -90,7 +90,7 @@ module.exports = app => {
         // 如果找到了，则删除该验证码
         if (doc) {
           doc.verificationCode = ''
-          const { username, _id } = doc
+          const { username, _id, test } = doc
           doc.save()
           if (!doc.status) {
             return res.status(403).json({
@@ -98,7 +98,7 @@ module.exports = app => {
               message: '由于您的不当操作，帐号已被停用。如有问题，请发邮件到121631835@qq.com'
             })
           }
-          return res.status(201).json({ code: 0, message: '验证成功', result: { token: generateToken({ username }), user: { username, _id } } })
+          return res.status(201).json({ code: 0, message: '验证成功', result: { token: generateToken({ username, test }), user: { username, _id } } })
           // 如果没有找到，则验证码无效
         }
         return res.status(401).json({ code: 1, message: '验证码无效' })
@@ -122,14 +122,14 @@ module.exports = app => {
       doc.comparePassword(password, (err, isMatch) => {
         if (err) return res.status(500).json({ code: 2, message: err.message, err })
         if (!isMatch) return res.status(401).json({ code: 1, message: '密码无效' })
-        const { _id } = doc
+        const { _id, test } = doc
         if (!doc.status) {
           return res.status(403).json({
             code: 1,
             message: '由于您的不当操作，帐号已被停用。如有问题，请发邮件到121631835@qq.com'
           })
         }
-        return res.status(201).json({ code: 0, message: '登录成功', result: { token: generateToken({ username }), user: { username, _id } } })
+        return res.status(201).json({ code: 0, message: '登录成功', result: { token: generateToken({ username, test }), user: { username, _id } } })
       })
     })
   })
