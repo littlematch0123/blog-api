@@ -38,7 +38,7 @@ const fnRelatedUser = (_id, res) => {
 module.exports = app => {
   /* 加载所有点赞 */
   app.get('/likes', (req, res) => {
-    Like.find().select('user createdAt').populate('post', 'title').populate('user', 'username').exec((err, docs) => {
+    Like.find().select('user createdAt').populate('post', 'title').populate('user', 'username').sort('-createdAt').exec((err, docs) => {
       if (err) return res.status(500).json({ code: 2, message: err.message, err })
       return res.status(200).json({ code: 0, message: '获取点赞成功', result: { docs } })
     })
