@@ -21,7 +21,10 @@ app.listen(port, () => {
 
 // 连接数据库
 const { uri } = require('./config')
-mongoose.connect(uri)
+mongoose.connect(uri, {
+  reconnectTries: Number.MAX_VALUE,
+  reconnectInterval: 1000
+})
 const db = mongoose.connection
 db.once('open', err => {
   if (err) {
